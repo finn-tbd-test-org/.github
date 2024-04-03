@@ -1,11 +1,11 @@
-name: Security and License Scans
+name: test test test
 
 on:
   workflow_call:
 
 jobs:
   fossa-scan:
-    name: FOSSA Scanning Kickoff
+    name: test test test test test
     runs-on: ubuntu-latest
 
     steps:
