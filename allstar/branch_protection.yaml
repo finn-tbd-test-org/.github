@@ -2,6 +2,6 @@ optConfig:
   optOutStrategy: true
   optOutRepos:
     - .github
-action: fix
+action: issue
 requireCodeOwnerReviews: true
 enforceOnAdmins: true
