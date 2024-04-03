@@ -14,6 +14,8 @@ jobs:
 
       - name: see what we checked out
         run: |
+          set -x
           env
           git rev-parse HEAD
           git describe --always --all
+          if [ -f README.md ]; then cat README.md; fi
