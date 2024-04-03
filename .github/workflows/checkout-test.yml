@@ -1,0 +1,19 @@
+name: Security and License Scans
+
+on:
+  workflow_call:
+
+jobs:
+  fossa-scan:
+    name: FOSSA Scanning Kickoff
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: see what we checked out
+        run: |
+          env
+          git rev-parse HEAD
+          git describe --always --all

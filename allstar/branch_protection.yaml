@@ -1,5 +1,7 @@
 optConfig:
   optOutStrategy: true
+  optOutRepos:
+    - .github
 action: fix
 requireCodeOwnerReviews: true
 enforceOnAdmins: true
