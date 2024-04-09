@@ -31,7 +31,7 @@ jobs:
     name: this will not run on PRs from forks
     runs-on: ubuntu-latest
 
-    if: github.repository_owner == "finn-tbd-test-org"
+    if: github.repository_owner == 'finn-tbd-test-org'
 
     steps:
       - run: echo "hello, internal PR"
