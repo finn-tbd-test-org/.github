@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  fossa-scan:
+  test-test-test-test-test-test-test-test:
     name: test test test test test
     runs-on: ubuntu-latest
 
@@ -19,3 +19,19 @@ jobs:
           git rev-parse HEAD
           git describe --always --all
           if [ -f README.md ]; then cat README.md; fi
+
+  runs-on-forks:
+    name: this will run on everything including forks
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "hello, forks"
+
+  doesnt-run-on-forks:
+    name: this will not run on PRs from forks
+    runs-on: ubuntu-latest
+
+    if: github.repository_owner == "finn-tbd-test-org"
+
+    steps:
+      - run: echo "hello, internal PR"
