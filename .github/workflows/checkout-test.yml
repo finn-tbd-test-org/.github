@@ -16,9 +16,15 @@ jobs:
         run: |
           set -x
           env
+          sleep 1
           git rev-parse HEAD
+          sleep 1
           git describe --always --all
+          sleep 1
           if [ -f README.md ]; then cat README.md; fi
+          sleep 1
+          cat "${GITHUB_EVENT_PATH}"
+          
 
   runs-on-forks:
     name: this will run on everything including forks
@@ -31,7 +37,7 @@ jobs:
     name: this will not run on PRs from forks
     runs-on: ubuntu-latest
 
-    if: github.repository_owner == 'finn-tbd-test-org'
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
     steps:
       - run: echo "hello, internal PR"
